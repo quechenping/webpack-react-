@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './index.css'
+import './index.less'
 import {Button} from 'antd'
 import About from './about'
 

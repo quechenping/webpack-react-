@@ -1,14 +1,14 @@
 const path = require("path"); //设置路径
+const webpack = require('webpack')
 const HtmlWebpackPlugin = require("html-webpack-plugin"); //生成html文件
 const miniCssExtractPlugin = require("mini-css-extract-plugin"); //打包时分离css文件
 const { CleanWebpackPlugin } = require("clean-webpack-plugin"); //打包时清空dist文件夹
 const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin"); //压缩css文件
 const TerserPlugin = require("terser-webpack-plugin"); //压缩js文件
-const webpack = require('webpack')
 const BundleAnalyzerPlugin = require("webpack-bundle-analyzer")
   .BundleAnalyzerPlugin;
 const theme = require("../theme");
-const darkTheme = require("@ant-design/dark-theme");
+const darkTheme = require("@ant-design/dark-theme").default;
 const { resolveAssetsRootDir } = require("../src/utils/utils");
 
 module.exports = {
@@ -62,7 +62,7 @@ module.exports = {
               //禁用内联js代码，这个功能用于禁用在样式表中写js代码
               javascriptEnabled: true,
               //根据antd官网进行主题修改
-              modifyVars: theme
+              modifyVars: darkTheme
             }
           }
         ]
