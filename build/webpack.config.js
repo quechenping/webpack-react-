@@ -1,5 +1,5 @@
 const path = require("path"); //设置路径
-const webpack = require('webpack')
+const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin"); //生成html文件
 const miniCssExtractPlugin = require("mini-css-extract-plugin"); //打包时分离css文件
 const { CleanWebpackPlugin } = require("clean-webpack-plugin"); //打包时清空dist文件夹
@@ -70,7 +70,7 @@ module.exports = {
     ]
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),   //热加载
+    new webpack.HotModuleReplacementPlugin(), //热加载
     new miniCssExtractPlugin({
       filename: resolveAssetsRootDir("css/[name].css")
     }),
@@ -118,5 +118,10 @@ module.exports = {
       "@components": path.join(__dirname, "./../", "src/components"),
       "@utils": path.join(__dirname, "./../", "src/utils")
     }
+  },
+  devServer: {
+    hot: true, //热
+    open: true, //自动打开浏览器
+    port: 8000 //端口
   }
 };
