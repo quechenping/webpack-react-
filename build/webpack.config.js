@@ -62,7 +62,7 @@ module.exports = {
               //禁用内联js代码，这个功能用于禁用在样式表中写js代码
               javascriptEnabled: true,
               //根据antd官网进行主题修改
-              modifyVars: darkTheme
+              // modifyVars: darkTheme
             }
           }
         ]

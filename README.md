@@ -1,4 +1,19 @@
 # webpack-react-
-webpack-react脚手架
 
-集成了antd按需加载，antd更改主题
+webpack-react 脚手架
+
+集成了 antd 按需加载，antd 更改主题
+npm config set registry 修改 npm 指向
+
+<Menu.Item key="1">新品上市</Menu.Item>
+<Menu.Item key="2">产品系列</Menu.Item>
+<Menu.Item key="3">金制饰品</Menu.Item>
+<Menu.Item key="4">银制饰品</Menu.Item>
+<Menu.Item key="5">水晶饰品</Menu.Item>
+<Menu.Item key="6">推荐搭配</Menu.Item>
+<Menu.Item key="7">会籍</Menu.Item>
+<Menu.Item key="8">我的订单</Menu.Item>
+<Menu.Item key="9">上传商品</Menu.Item>
+<Menu.Item key="10">退出登录</Menu.Item>
+<Menu.Item key="11">查询结果</Menu.Item>
+<Menu.Item key="12">评论</Menu.Item>
