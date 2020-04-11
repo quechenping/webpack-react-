@@ -1,29 +1,42 @@
 import React, { memo, useEffect, useState, useContext } from "react";
 import { Row, Col, Card, Button, message } from "antd";
+import { ValueContext } from "../context";
 import axios from "axios";
-import { ValueContext } from "./context";
-import "./index.less";
 const { Meta } = Card;
 
-const SelectData = ({ value }) => {
+const RecommendList = ({ type }) => {
+  const { user, setUser, setMenuType, setVisible, setType } = useContext(
+    ValueContext
+  );
   const [data, setData] = useState([]);
-  const { setMenuType } = useContext(ValueContext);
   useEffect(() => {
-    axios
-      .get(`http://localhost:3000/data`)
-      .then((res) => {
-        let data = res.data;
-        const arr = data.filter((item) => item.name.indexOf(value) > -1);
-        console.log(arr, data, value);
-        setData(arr);
-      })
-      .catch((err) => {
-        message.error(err);
-      });
-  }, [value]);
+    axios.get(`http://localhost:3000/data?type=${type}`).then((resp) => {
+      const data = resp.data;
+      console.log(data);
+      setData(data);
+    });
+  }, []);
+
+  const handleClick = (e, item) => {
+    e.stopPropagation();
+    if (JSON.stringify(user) === "{}") {
+      message.warning("请先登录");
+      setVisible(true);
+      setType("login");
+    } else {
+      const shopArr = user.shopcart ? user.shopcart : [];
+      shopArr.push(item);
+      setUser({ ...user, shopcart: shopArr });
+      axios
+        .patch(`http://localhost:3000/users/${user.id}`, { shopcart: shopArr })
+        .then(() => {
+          message.success("添加成功");
+        });
+    }
+  };
 
   return (
-    <div className="product">
+    <div>
       <Row gutter={16}>
         {data.map((item) => (
           <Col span={6} key={item.id} style={{ marginTop: 20 }}>
@@ -34,7 +47,7 @@ const SelectData = ({ value }) => {
               style={{ width: "100%", cursor: "pointer" }}
               cover={
                 <img
-                  src={require(`../img/${item.img}`).default}
+                  src={require(`../../img/${item.img}`).default}
                   alt="加载中"
                   style={{ width: "100%" }}
                 />
@@ -65,4 +78,4 @@ const SelectData = ({ value }) => {
   );
 };
 
-export default memo(SelectData);
+export default memo(RecommendList);

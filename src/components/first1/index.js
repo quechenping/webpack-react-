@@ -4,8 +4,8 @@ import ShareList from "./shareList";
 import "../index.less";
 const { Meta } = Card;
 
-const Products = () => {
-  const handleknow = i => {
+const Products = ({ setMenuType }) => {
+  const handleknow = (i) => {
     console.log(i);
   };
 
@@ -13,28 +13,28 @@ const Products = () => {
     <div className="product">
       <Carousel autoplay effect="fade">
         <div>
-          <h3>1</h3>
+          <img src={require("../../img/5-1.jpg").default} alt="加载中" />
         </div>
         <div>
-          <h3>2</h3>
+          <img src={require("../../img/2-1.jpg").default} alt="加载中" />
         </div>
         <div>
-          <h3>3</h3>
+          <img src={require("../../img/5-1.jpg").default} alt="加载中" />
         </div>
         <div>
-          <h3>4</h3>
+          <img src={require("../../img/2-1.jpg").default} alt="加载中" />
         </div>
       </Carousel>
       <Divider />
       <div style={{ marginTop: 20 }}>
         <Row gutter={16}>
-          <Col span={8}>
+          <Col span={12}>
             <Card
               hoverable
               style={{ width: "100%" }}
               cover={
                 <img
-                  src={require("../../img/pro1.jpg").default}
+                  src={require("../../img/5-1.jpg").default}
                   alt="加载中"
                   style={{ width: "100%" }}
                 />
@@ -45,7 +45,7 @@ const Products = () => {
                   <Button
                     type="link"
                     onClick={() => {
-                      handleknow(1);
+                      setMenuType({ type: "7", value: 6 });
                     }}
                   >
                     了解更多
@@ -54,13 +54,13 @@ const Products = () => {
               />
             </Card>
           </Col>
-          <Col span={8}>
+          <Col span={12}>
             <Card
               hoverable
               style={{ width: "100%" }}
               cover={
                 <img
-                  src={require("../../img/pro1.jpg").default}
+                  src={require("../../img/5-2.jpg").default}
                   alt="加载中"
                   style={{ width: "100%" }}
                 />
@@ -71,33 +71,7 @@ const Products = () => {
                   <Button
                     type="link"
                     onClick={() => {
-                      handleknow(2);
-                    }}
-                  >
-                    了解更多
-                  </Button>
-                }
-              />
-            </Card>
-          </Col>
-          <Col span={8}>
-            <Card
-              hoverable
-              style={{ width: "100%" }}
-              cover={
-                <img
-                  src={require("../../img/pro1.jpg").default}
-                  alt="加载中"
-                  style={{ width: "100%" }}
-                />
-              }
-            >
-              <Meta
-                title={
-                  <Button
-                    type="link"
-                    onClick={() => {
-                      handleknow(3);
+                      setMenuType({ type: "7", value: 7 });
                     }}
                   >
                     了解更多
@@ -111,97 +85,117 @@ const Products = () => {
       <Divider />
       <div style={{ marginTop: 20 }}>
         <div style={{ textAlign: "center", marginBottom: 10 }}>
-          <span style={{ fontSize: 32 }}>类别浏览</span>
+          <span style={{ fontSize: 32 }}>新品预览</span>
         </div>
         <Row gutter={16}>
-          <Col span={4}>
+          <Col span={8}>
             <Card
+              onClick={() => {
+                setMenuType({ type: "7", value: 6 });
+              }}
               hoverable
               style={{ width: "100%" }}
               cover={
                 <img
-                  src={require("../../img/pro1.jpg").default}
+                  src={require("../../img/5-1.jpg").default}
                   alt="加载中"
                   style={{ width: "100%" }}
                 />
               }
             >
-              <Meta title="项链" />
+              <Meta title="名家作品 > 粉彩四季花鸟杯" />
             </Card>
           </Col>
-          <Col span={4}>
+          <Col span={8}>
             <Card
+              onClick={() => {
+                setMenuType({ type: "7", value: 7 });
+              }}
               hoverable
               style={{ width: "100%" }}
               cover={
                 <img
-                  src={require("../../img/pro1.jpg").default}
+                  src={require("../../img/5-2.jpg").default}
                   alt="加载中"
                   style={{ width: "100%" }}
                 />
               }
             >
-              <Meta title="耳环" />
+              <Meta title="名家作品 > 福在眼前对杯" />
             </Card>
           </Col>
-          <Col span={4}>
+          <Col span={8}>
             <Card
+              onClick={() => {
+                setMenuType({ type: "7", value: 8 });
+              }}
               hoverable
               style={{ width: "100%" }}
               cover={
                 <img
-                  src={require("../../img/pro1.jpg").default}
+                  src={require("../../img/5-3.jpg").default}
                   alt="加载中"
                   style={{ width: "100%" }}
                 />
               }
             >
-              <Meta title="手链" />
+              <Meta title="名家作品 > 粉彩鸡缸杯" />
             </Card>
           </Col>
-          <Col span={4}>
+        </Row>
+        <Row gutter={16} style={{ marginTop: 10 }}>
+          <Col span={8}>
             <Card
+              onClick={() => {
+                setMenuType({ type: "7", value: 9 });
+              }}
               hoverable
               style={{ width: "100%" }}
               cover={
                 <img
-                  src={require("../../img/pro1.jpg").default}
+                  src={require("../../img/5-4.jpg").default}
                   alt="加载中"
                   style={{ width: "100%" }}
                 />
               }
             >
-              <Meta title="套装" />
+              <Meta title="名家作品 > 观山复水笔筒" />
             </Card>
           </Col>
-          <Col span={4}>
+          <Col span={8}>
             <Card
+              onClick={() => {
+                setMenuType({ type: "7", value: 10 });
+              }}
               hoverable
               style={{ width: "100%" }}
               cover={
                 <img
-                  src={require("../../img/pro1.jpg").default}
+                  src={require("../../img/5-5.jpg").default}
                   alt="加载中"
                   style={{ width: "100%" }}
                 />
               }
             >
-              <Meta title="戒指" />
+              <Meta title="名家作品 > 五福四海品茗杯" />
             </Card>
           </Col>
-          <Col span={4}>
+          <Col span={8}>
             <Card
+              onClick={() => {
+                setMenuType({ type: "7", value: 11 });
+              }}
               hoverable
               style={{ width: "100%" }}
               cover={
                 <img
-                  src={require("../../img/pro1.jpg").default}
+                  src={require("../../img/5-6.jpg").default}
                   alt="加载中"
                   style={{ width: "100%" }}
                 />
               }
             >
-              <Meta title="其他" />
+              <Meta title="名家作品 > 薄胎四季花鸟杯" />
             </Card>
           </Col>
         </Row>

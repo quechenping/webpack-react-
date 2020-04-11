@@ -10,13 +10,15 @@ import {
   Dropdown,
   Modal,
   Avatar,
+  Badge,
 } from "antd";
 import Products from "./first1/index";
 import Discuss from "./discuss";
-import Recommend from "./recommend";
+import Recommend from "./recommend/recommend";
 import SelectData from "./selectData";
 import Login from "./login/login";
 import Sigin from "./login/sigin";
+import Detail from "./detail/detail";
 import Comment from "./comment/comment";
 import { ValueContext } from "./context";
 import "./index.less";
@@ -39,6 +41,7 @@ const App = () => {
   const [visible, setVisible] = useState(false); //登录注册框是否展现
   const [user, setUser] = useState({}); //登录的用户信息
   const [type, setType] = useState(""); //login or sigin
+  const [activeKey, setActiveKey] = useState("典藏重器"); // 产品系列tab页位置
 
   useEffect(() => {
     menuType.type === "10" ? setUser({}) : "";
@@ -66,7 +69,18 @@ const App = () => {
   );
 
   return (
-    <ValueContext.Provider value={{ setMenuType }}>
+    <ValueContext.Provider
+      value={{
+        menuType,
+        setMenuType,
+        user,
+        setUser,
+        setVisible,
+        setType,
+        activeKey,
+        setActiveKey,
+      }}
+    >
       <Layout className="layout">
         <div style={{ height: 50, lineHeight: "50px" }}>
           <Row>
@@ -75,7 +89,9 @@ const App = () => {
               <Icon type="search" onClick={handleSearch} />
             </Col>
             <Col span={1}>
-              <Icon type="shopping" theme="filled" />
+              <Badge count={user && user.shopcart ? user.shopcart.length : 0}>
+                <Icon type="shopping" theme="filled" />
+              </Badge>
             </Col>
             <Col span={1}>
               {JSON.stringify(user) !== "{}" ? (
@@ -142,13 +158,12 @@ const App = () => {
                 style={{ lineHeight: "64px" }}
                 onClick={menuClick}
               >
-                <Menu.Item key="1">新品上市</Menu.Item>
+                <Menu.Item key="1">首页</Menu.Item>
                 <Menu.Item key="2">产品系列</Menu.Item>
-                <Menu.Item key="3">金制饰品</Menu.Item>
-                <Menu.Item key="4">银制饰品</Menu.Item>
-                <Menu.Item key="5">水晶饰品</Menu.Item>
-                <Menu.Item key="6">推荐搭配</Menu.Item>
-                <Menu.Item key="7">会籍</Menu.Item>
+                <Menu.Item key="3">热销</Menu.Item>
+                <Menu.Item key="4">新品</Menu.Item>
+                <Menu.Item key="5">我的订单</Menu.Item>
+                <Menu.Item key="6">个人中心</Menu.Item>
               </Menu>
             </>
           ) : (
@@ -178,7 +193,7 @@ const App = () => {
             }}
           >
             {menuType.type === "1" ? (
-              <Products />
+              <Products setMenuType={setMenuType} />
             ) : menuType.type === "2" ? (
               <Recommend />
             ) : menuType.type === "3" ? (
@@ -187,9 +202,9 @@ const App = () => {
               <SelectData value={searchValue} />
             ) : menuType.type === "12" ? (
               <Comment id={menuType.value} />
-            ) : (
-              <Products />
-            )}
+            ) : menuType.type === "7" ? (
+              <Detail value={menuType.value} />
+            ) : null}
           </div>
         </Content>
         <Footer style={{ textAlign: "center" }}>
@@ -206,7 +221,7 @@ const App = () => {
         visible={visible}
       >
         {type === "login" ? (
-          <Login setUser={setUser} setVisible={setVisible} />
+          <Login setUser={setUser} setVisible={setVisible} setType={setType} />
         ) : type === "sigin" ? (
           <Sigin setType={setType} />
         ) : null}

@@ -1,11 +1,13 @@
-import React, { useEffect, useState, useCallback } from "react";
+import React, { useEffect, useState, useCallback, useContext } from "react";
 import { Comment, List, message, Avatar, Form, Button, Input } from "antd";
+import { ValueContext } from "../context";
 import axios from "axios";
 import moment from "moment";
 import { cloneDeep } from "lodash";
 const { TextArea } = Input;
 
 const comment = ({ id }) => {
+  const { setMenuType } = useContext(ValueContext);
   const [data, setData] = useState([]);
   const [submitting, setSubmitting] = useState(false);
   const [value, setValue] = useState("");
@@ -66,7 +68,7 @@ const comment = ({ id }) => {
               <img
                 width={272}
                 alt="logo"
-                src={require("../../img/pro1.jpg").default}
+                src={require("../../img/5-1.jpg").default}
               />
             }
           >
@@ -105,6 +107,13 @@ const comment = ({ id }) => {
                 style={{ marginRight: 10 }}
               >
                 发表评论
+              </Button>
+              <Button
+                onClick={() => {
+                  setMenuType({ type: "1" });
+                }}
+              >
+                返回
               </Button>
             </Form.Item>
           </div>

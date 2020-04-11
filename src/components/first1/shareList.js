@@ -100,7 +100,7 @@ const ShareList = () => {
                 }}
               >
                 <MessageOutlined style={{ fontSize: "16px", marginRight: 8 }} />
-                <span>{item.message}</span>
+                <span>{item.comment.length}</span>
               </span>,
               <span
                 onClick={() => {
@@ -134,7 +134,7 @@ const ShareList = () => {
               <img
                 width={272}
                 alt="logo"
-                src={require("../../img/pro1.jpg").default}
+                src={require("../../img/5-1.jpg").default}
               />
             }
           >
