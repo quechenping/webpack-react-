@@ -3,78 +3,101 @@
     {
       "id": 1,
       "user": "hush",
-      "password": "123",
-      "phone": "13163224280",
+      "password": "111",
+      "phone": "13163224281",
       "email": "que_chenping@163.com",
       "from": "湖北-武汉-洪山",
-      "shopcart": [
+      "shopcart": [],
+      "delivery": [
         {
-          "key": "1",
-          "img": "2.jpg",
-          "name": "新中梅花花瓶",
-          "type": "1",
-          "val": "瓶小口,短颈,丰肩,圈足外壁蓝地扒花工艺装饰,,整体工艺精湛,层次丰富,绘画流畅,色彩丰丽",
-          "price": 1028,
-          "chense": 9,
-          "from": "china",
-          "time": "2020-1-1"
+          "data": [
+            {
+              "id": "4",
+              "img": "3-1.jpg",
+              "name": "镂空大瓷盘",
+              "type": "3",
+              "val": "此盘折沿镂孔一周,潜腹圈足,盘型周正,底部施松石绿釉为地.以黄粉相间珐琅彩,绘画如意云头,花朵,蕉叶纹为边饰,盘心巧妙地运用点线面与几何锦文将其分为四个部分,每部分均绘一组宝箱花纹,整体工艺精湛,层次丰富,绘画流畅,色彩丰丽",
+              "price": 2999,
+              "chense": 9,
+              "from": "china",
+              "time": "2020-1-1",
+              "discuss": 123,
+              "num": 3
+            }
+          ],
+          "price": "2000",
+          "creatTime": "2020-04-15 14:45:40",
+          "num": "4384702420474389",
+          "paytype": 3,
+          "username": "hush",
+          "phone": "13163224280",
+          "from": "湖北-武汉-洪山",
+          "place": "1"
         },
         {
-          "key": "1",
-          "img": "2.jpg",
-          "name": "新中梅花花瓶",
-          "type": "1",
-          "val": "瓶小口,短颈,丰肩,圈足外壁蓝地扒花工艺装饰,,整体工艺精湛,层次丰富,绘画流畅,色彩丰丽",
-          "price": 1028,
-          "chense": 9,
-          "from": "china",
-          "time": "2020-1-1"
+          "data": [
+            {
+              "id": "1",
+              "img": "1-0.jpg",
+              "name": "新中梅花花瓶",
+              "type": "1",
+              "val": "瓶小口,短颈,丰肩,圈足外壁蓝地扒花工艺装饰,,整体工艺精湛,层次丰富,绘画流畅,色彩丰丽",
+              "price": 1028,
+              "chense": 9,
+              "from": "china",
+              "time": "2020-1-1",
+              "discuss": 10,
+              "num": 2
+            }
+          ],
+          "price": 2056,
+          "creatTime": "2020-04-19 19:36:52",
+          "num": "72491553689836",
+          "paytype": 1,
+          "username": "hush",
+          "phone": "13163224281",
+          "from": "湖北-武汉-洪山"
         },
         {
-          "key": "2",
-          "img": "2.jpg",
-          "name": "新中梅花花瓶",
-          "type": "1",
-          "val": "瓶小口,短颈,丰肩,圈足外壁蓝地扒花工艺装饰,,整体工艺精湛,层次丰富,绘画流畅,色彩丰丽",
-          "price": 1028,
-          "chense": 9,
-          "from": "china",
-          "time": "2020-1-1"
-        },
-        {
-          "key": "1",
-          "img": "2.jpg",
-          "name": "新中梅花花瓶",
-          "type": "1",
-          "val": "瓶小口,短颈,丰肩,圈足外壁蓝地扒花工艺装饰,,整体工艺精湛,层次丰富,绘画流畅,色彩丰丽",
-          "price": 1028,
-          "chense": 9,
-          "from": "china",
-          "time": "2020-1-1"
-        },
-        {
-          "key": "1",
-          "img": "5-1.jpg",
-          "name": "粉彩四季花鸟杯",
-          "type": "5",
-          "val": "瓶小口,短颈,丰肩,圈足外壁蓝地扒花工艺装饰,,整体工艺精湛,层次丰富,绘画流畅,色彩丰丽",
-          "price": 1028,
-          "chense": 9,
-          "from": "china",
-          "time": "2020-1-1"
-        },
-        {
-          "key": "1",
-          "img": "2.jpg",
-          "name": "新中梅花花瓶",
-          "type": "1",
-          "val": "瓶小口,短颈,丰肩,圈足外壁蓝地扒花工艺装饰,,整体工艺精湛,层次丰富,绘画流畅,色彩丰丽",
-          "price": 1028,
-          "chense": 9,
-          "from": "china",
-          "time": "2020-1-1"
+          "data": [
+            {
+              "id": "3",
+              "img": "2-1.jpg",
+              "name": "寿桃柳叶花瓶",
+              "type": "2",
+              "val": "寿圆口,粗颈,垂肩,园腹,圈足,内施青釉,外壁蓝地扒花工艺装饰,口沿与双耳出描金工艺,腹身主题图案是手绘粉彩花卉,蝴蝶等样式.",
+              "price": 2099,
+              "chense": 9,
+              "from": "china",
+              "time": "2020-1-1",
+              "discuss": 102,
+              "num": 2
+            },
+            {
+              "id": "4",
+              "img": "3-1.jpg",
+              "name": "镂空大瓷盘",
+              "type": "3",
+              "val": "此盘折沿镂孔一周,潜腹圈足,盘型周正,底部施松石绿釉为地.以黄粉相间珐琅彩,绘画如意云头,花朵,蕉叶纹为边饰,盘心巧妙地运用点线面与几何锦文将其分为四个部分,每部分均绘一组宝箱花纹,整体工艺精湛,层次丰富,绘画流畅,色彩丰丽",
+              "price": 2999,
+              "chense": 9,
+              "from": "china",
+              "time": "2020-1-1",
+              "discuss": 123,
+              "num": 3
+            }
+          ],
+          "price": 10196,
+          "creatTime": "2020-04-19 19:37:34",
+          "num": "5581235988282989",
+          "paytype": 3,
+          "username": "hush",
+          "phone": "13163224281",
+          "from": "湖北-武汉-洪山",
+          "place": "2"
         }
-      ]
+      ],
+      "username": "hush"
     },
     {
       "user": "qcp",
@@ -96,7 +119,8 @@
       "price": 1028,
       "chense": 9,
       "from": "china",
-      "time": "2020-1-1"
+      "time": "2020-1-1",
+      "discuss": 10
     },
     {
       "id": "3",
@@ -107,7 +131,8 @@
       "price": 2099,
       "chense": 9,
       "from": "china",
-      "time": "2020-1-1"
+      "time": "2020-1-1",
+      "discuss": 102
     },
     {
       "id": "4",
@@ -118,7 +143,8 @@
       "price": 2999,
       "chense": 9,
       "from": "china",
-      "time": "2020-1-1"
+      "time": "2020-1-1",
+      "discuss": 123
     },
     {
       "id": "5",
@@ -129,7 +155,8 @@
       "price": 1028,
       "chense": 9,
       "from": "china",
-      "time": "2020-1-1"
+      "time": "2020-1-1",
+      "discuss": 20
     },
     {
       "id": "6",
@@ -140,7 +167,8 @@
       "price": 1028,
       "chense": 9,
       "from": "china",
-      "time": "2020-1-1"
+      "time": "2020-1-1",
+      "discuss": 300
     },
     {
       "id": "7",
@@ -151,7 +179,8 @@
       "price": 1028,
       "chense": 9,
       "from": "china",
-      "time": "2020-1-1"
+      "time": "2020-1-1",
+      "discuss": 40
     },
     {
       "id": "8",
@@ -162,7 +191,8 @@
       "price": 1028,
       "chense": 9,
       "from": "china",
-      "time": "2020-1-1"
+      "time": "2020-1-1",
+      "discuss": 12
     },
     {
       "id": "9",
@@ -173,7 +203,8 @@
       "price": 1028,
       "chense": 9,
       "from": "china",
-      "time": "2020-1-1"
+      "time": "2020-1-1",
+      "discuss": 11
     },
     {
       "id": "10",
@@ -184,7 +215,8 @@
       "price": 1028,
       "chense": 9,
       "from": "china",
-      "time": "2020-1-1"
+      "time": "2020-1-1",
+      "discuss": 31
     },
     {
       "id": "11",
@@ -195,7 +227,8 @@
       "price": 1028,
       "chense": 9,
       "from": "china",
-      "time": "2020-1-1"
+      "time": "2020-1-1",
+      "discuss": 22
     }
   ],
   "list": [
@@ -208,6 +241,12 @@
       "like": 23,
       "star": 25,
       "comment": [
+        {
+          "author": "Han Solo",
+          "avatar": "https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png",
+          "content": "123123123",
+          "datetime": "a few seconds ago"
+        },
         {
           "author": "Han Solo",
           "avatar": "https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png",

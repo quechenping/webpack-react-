@@ -75,6 +75,8 @@ const Detail = ({ value }) => {
           <br />
           <span className="title_2">介绍：{data ? data.val : ""}</span>
           <br />
+          <span className="title_price">销量：{data ? data.discuss : ""}</span>
+          <br />
           <span className="title_price">¥{data ? data.price : ""}</span>
           <br />
           <Button

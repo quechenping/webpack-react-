@@ -4,17 +4,19 @@ import { ValueContext } from "../context";
 import axios from "axios";
 const { Meta } = Card;
 
-const RecommendList = ({ type }) => {
+const Auction = () => {
   const { user, setUser, setMenuType, setVisible, setType } = useContext(
     ValueContext
   );
   const [data, setData] = useState([]);
   useEffect(() => {
-    axios.get(`http://localhost:3000/data?type=${type}`).then((resp) => {
-      const data = resp.data;
-      console.log(data);
-      setData(data);
-    });
+    axios
+      .get(`http://localhost:3000/data?_limit=8&_sort=discuss&_order=desc`)
+      .then((resp) => {
+        const data = resp.data;
+        console.log(data);
+        setData(data);
+      });
   }, []);
 
   const handleClick = (e, item) => {
@@ -39,8 +41,9 @@ const RecommendList = ({ type }) => {
     <div>
       <Row gutter={16}>
         {data.map((item) => (
-          <Col span={6} key={item.id} style={{ marginTop: 20 }}>
+          <Col span={6} key={item.id} style={{ marginTop: 20, padding: 30 }}>
             <Card
+              hoverable
               onClick={() => {
                 setMenuType({ type: "7", value: item.id });
               }}
@@ -81,4 +84,4 @@ const RecommendList = ({ type }) => {
   );
 };
 
-export default memo(RecommendList);
+export default memo(Auction);

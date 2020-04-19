@@ -12,8 +12,13 @@ import {
   Avatar,
   Badge,
 } from "antd";
+import { Link } from "react-router-dom";
 import Products from "./first1/index";
-import Discuss from "./discuss";
+import Discuss from "./discuss/discuss";
+import Auction from "./auction/auction";
+import ShopCar from "./shopcar/shopcar";
+import MyCore from "./myCore/index";
+import Order from "./order/order";
 import Recommend from "./recommend/recommend";
 import SelectData from "./selectData";
 import Login from "./login/login";
@@ -24,15 +29,6 @@ import { ValueContext } from "./context";
 import "./index.less";
 const { Header, Content, Footer } = Layout;
 const { Search } = Input;
-const menu = (
-  <Menu style={{ width: 100 }}>
-    <Menu.Item key="3">使用条款</Menu.Item>
-    <Menu.Item key="4">销售条款</Menu.Item>
-    <Menu.Item key="5">隐私政策</Menu.Item>
-    <Menu.Item key="6">联系我们</Menu.Item>
-    <Menu.Item key="7">网站反馈</Menu.Item>
-  </Menu>
-);
 
 const App = () => {
   const [menuType, setMenuType] = useState({ type: "1", value: "" }); //主页面选择的是哪个menu,显示什么页面
@@ -54,7 +50,7 @@ const App = () => {
   const handleSearch = (e) => {
     setSearchShow(true);
   };
-
+  console.log("111", menuType);
   const loginMenu = (
     <Menu
       style={{ width: 100 }}
@@ -62,7 +58,6 @@ const App = () => {
         setMenuType({ type: key });
       }}
     >
-      <Menu.Item key="8">我的订单</Menu.Item>
       <Menu.Item key="9">上传商品</Menu.Item>
       <Menu.Item key="10">退出登录</Menu.Item>
     </Menu>
@@ -90,7 +85,13 @@ const App = () => {
             </Col>
             <Col span={1}>
               <Badge count={user && user.shopcart ? user.shopcart.length : 0}>
-                <Icon type="shopping" theme="filled" />
+                <Icon
+                  type="shopping"
+                  theme="filled"
+                  onClick={() => {
+                    setMenuType({ type: "13" });
+                  }}
+                />
               </Badge>
             </Col>
             <Col span={1}>
@@ -134,15 +135,19 @@ const App = () => {
               </Button>
             </Col>
             <Col span={1}>
-              <Dropdown overlay={menu}>
-                <Button
-                  type="link"
-                  ghost
-                  style={{ color: "rgb(123, 119, 119)" }}
-                >
-                  帮助
-                </Button>
-              </Dropdown>
+              {/* <Button
+                type="link"
+                ghost
+                onClick={() => {
+                  setMenuType({ type: "14" });
+                }}
+                style={{ color: "rgb(123, 119, 119)" }}
+              >
+                后台
+              </Button> */}
+              <Link to="/root" style={{ color: "rgb(123, 119, 119)" }}>
+                后台
+              </Link>
             </Col>
           </Row>
         </div>
@@ -153,6 +158,7 @@ const App = () => {
               <Menu
                 defaultOpenKeys="1"
                 defaultSelectedKeys="1"
+                selectedKeys={[menuType.type]}
                 theme="dark"
                 mode="horizontal"
                 style={{ lineHeight: "64px" }}
@@ -161,7 +167,7 @@ const App = () => {
                 <Menu.Item key="1">首页</Menu.Item>
                 <Menu.Item key="2">产品系列</Menu.Item>
                 <Menu.Item key="3">热销</Menu.Item>
-                <Menu.Item key="4">新品</Menu.Item>
+                <Menu.Item key="4">拍卖</Menu.Item>
                 <Menu.Item key="5">我的订单</Menu.Item>
                 <Menu.Item key="6">个人中心</Menu.Item>
               </Menu>
@@ -198,10 +204,18 @@ const App = () => {
               <Recommend />
             ) : menuType.type === "3" ? (
               <Discuss />
+            ) : menuType.type === "4" ? (
+              <Auction />
+            ) : menuType.type === "5" ? (
+              <Order />
+            ) : menuType.type === "6" ? (
+              <MyCore />
             ) : menuType.type === "11" ? (
               <SelectData value={searchValue} />
             ) : menuType.type === "12" ? (
               <Comment id={menuType.value} />
+            ) : menuType.type === "13" ? (
+              <ShopCar />
             ) : menuType.type === "7" ? (
               <Detail value={menuType.value} />
             ) : null}
