@@ -55,22 +55,18 @@ const Detail = ({ value }) => {
           <span className="title_2">
             分类：
             {data
-              ? data.type
-              : "" === 1
-              ? "典藏重器"
-              : data
-              ? data.type
-              : "" === 2
-              ? "仿古青花"
-              : data
-              ? data.type
-              : "" === 3
-              ? "皇窑名瓷"
-              : data
-              ? data.type
-              : "" === 4
-              ? "官窑粉彩"
-              : "名家作品"}
+              ? data.type === "1"
+                ? "典藏重器"
+                : data.type === "2"
+                ? "仿古青花"
+                : data.type === "3"
+                ? "皇窑名瓷"
+                : data.type === "4"
+                ? "官窑粉彩"
+                : data.type === "5"
+                ? "名家作品"
+                : ""
+              : ""}
           </span>
           <br />
           <span className="title_2">介绍：{data ? data.val : ""}</span>

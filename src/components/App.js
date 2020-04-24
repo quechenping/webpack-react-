@@ -15,7 +15,6 @@ import {
 import { Link } from "react-router-dom";
 import Products from "./first1/index";
 import Discuss from "./discuss/discuss";
-import Auction from "./auction/auction";
 import ShopCar from "./shopcar/shopcar";
 import MyCore from "./myCore/index";
 import Order from "./order/order";
@@ -167,7 +166,6 @@ const App = () => {
                 <Menu.Item key="1">首页</Menu.Item>
                 <Menu.Item key="2">产品系列</Menu.Item>
                 <Menu.Item key="3">热销</Menu.Item>
-                <Menu.Item key="4">拍卖</Menu.Item>
                 <Menu.Item key="5">我的订单</Menu.Item>
                 <Menu.Item key="6">个人中心</Menu.Item>
               </Menu>
@@ -204,8 +202,6 @@ const App = () => {
               <Recommend />
             ) : menuType.type === "3" ? (
               <Discuss />
-            ) : menuType.type === "4" ? (
-              <Auction />
             ) : menuType.type === "5" ? (
               <Order />
             ) : menuType.type === "6" ? (

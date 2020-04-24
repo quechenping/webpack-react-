@@ -6,6 +6,8 @@ import Client from "./client";
 import Commodity from "./commodity";
 import Password from "./password";
 import Edit from "./edit";
+import UserEdit from "./userEdit";
+import CommodeEdit from "./commodeEdit";
 
 const { Header, Content, Footer } = Layout;
 
@@ -50,13 +52,17 @@ const Admin = () => {
           {menuType.type === "1" ? (
             <Order setMenuType={setMenuType} />
           ) : menuType.type === "2" ? (
-            <Client />
+            <Client setMenuType={setMenuType} />
           ) : menuType.type === "3" ? (
-            <Commodity />
+            <Commodity setMenuType={setMenuType} />
           ) : menuType.type === "4" ? (
             <Password />
           ) : menuType.type === "6" ? (
             <Edit menuType={menuType} setMenuType={setMenuType} />
+          ) : menuType.type === "7" ? (
+            <UserEdit menuType={menuType} setMenuType={setMenuType} />
+          ) : menuType.type === "8" ? (
+            <CommodeEdit menuType={menuType} setMenuType={setMenuType} />
           ) : null}
         </div>
       </Content>
