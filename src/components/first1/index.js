@@ -11,21 +11,21 @@ const Products = ({ setMenuType }) => {
 
   return (
     <div className="product">
-      <Carousel autoplay effect="fade">
+      {/* <Carousel autoplay effect="fade">
         <div>
-          <img src={require("../../img/5-1.jpg").default} alt="加载中" />
+          <img src={require("../../img/app1.jpg").default} alt="加载中" />
         </div>
         <div>
-          <img src={require("../../img/2-1.jpg").default} alt="加载中" />
+          <img src={require("../../img/app1.jpg").default} alt="加载中" />
         </div>
         <div>
-          <img src={require("../../img/5-1.jpg").default} alt="加载中" />
+          <img src={require("../../img/app1.jpg").default} alt="加载中" />
         </div>
         <div>
-          <img src={require("../../img/2-1.jpg").default} alt="加载中" />
+          <img src={require("../../img/app1.jpg").default} alt="加载中" />
         </div>
       </Carousel>
-      <Divider />
+      <Divider /> */}
       <div style={{ marginTop: 20 }}>
         <Row gutter={16}>
           <Col span={12}>

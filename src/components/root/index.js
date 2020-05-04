@@ -3,7 +3,7 @@ import Login from "./login";
 import User from "./admin";
 
 const Root = () => {
-  const [rootUser, setRootUser] = useState({ user: "admin" });
+  const [rootUser, setRootUser] = useState({});
   return (
     <div>
       {JSON.stringify(rootUser) === "{}" ? (

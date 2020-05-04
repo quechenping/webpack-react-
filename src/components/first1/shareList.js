@@ -139,7 +139,17 @@ const ShareList = () => {
             }
           >
             <List.Item.Meta
-              avatar={<Avatar src={item.avatar} />}
+              avatar={
+                <Avatar
+                  style={{
+                    backgroundColor: "#7265e6",
+                    verticalAlign: "middle",
+                  }}
+                  size="large"
+                >
+                  {item.title}
+                </Avatar>
+              }
               title={<a href={item.href}>{item.title}</a>}
               description={item.description}
             />

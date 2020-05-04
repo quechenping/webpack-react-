@@ -7,7 +7,7 @@ import { cloneDeep } from "lodash";
 const { TextArea } = Input;
 
 const comment = ({ id }) => {
-  const { setMenuType } = useContext(ValueContext);
+  const { setMenuType, user } = useContext(ValueContext);
   const [data, setData] = useState([]);
   const [submitting, setSubmitting] = useState(false);
   const [value, setValue] = useState("");
@@ -73,7 +73,17 @@ const comment = ({ id }) => {
             }
           >
             <List.Item.Meta
-              avatar={<Avatar src={item.avatar} />}
+              avatar={
+                <Avatar
+                  style={{
+                    backgroundColor: "#7265e6",
+                    verticalAlign: "middle",
+                  }}
+                  size="large"
+                >
+                  {item.title}
+                </Avatar>
+              }
               title={<a href={item.href}>{item.title}</a>}
               description={item.description}
             />
@@ -84,9 +94,14 @@ const comment = ({ id }) => {
       <Comment
         avatar={
           <Avatar
-            src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
-            alt="Han Solo"
-          />
+            style={{
+              backgroundColor: "#7265e6",
+              verticalAlign: "middle",
+            }}
+            size="large"
+          >
+            {user.user}
+          </Avatar>
         }
         content={
           <div>
@@ -128,7 +143,17 @@ const comment = ({ id }) => {
           <li>
             <Comment
               author={item.author}
-              avatar={item.avatar}
+              avatar={
+                <Avatar
+                  style={{
+                    backgroundColor: "#7265e6",
+                    verticalAlign: "middle",
+                  }}
+                  size="large"
+                >
+                  {item.title}
+                </Avatar>
+              }
               content={item.content}
               datetime={item.datetime}
             />

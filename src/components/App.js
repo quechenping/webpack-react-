@@ -78,7 +78,13 @@ const App = () => {
       <Layout className="layout">
         <div style={{ height: 50, lineHeight: "50px" }}>
           <Row>
-            <Col span={4}>Logo</Col>
+            <Col span={4}>
+              <img
+                src={require(`../img/logo.png`).default}
+                alt="加载中"
+                style={{ width: "80%", marginLeft: 15 }}
+              />
+            </Col>
             <Col span={1} offset={15}>
               <Icon type="search" onClick={handleSearch} />
             </Col>
